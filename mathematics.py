@@ -11,7 +11,8 @@ r3 = input('A male student: \n')
 n1 = int(input('A whole number: \n'))
 n2 = int(input('Another whole number \n'))
 #math formulas
-c2 = (n1 ** 2) + (n2 ** 2)
+c1 = float(((n1 ** 2) + (n2 ** 2)) ** (1/2))
+c2 = round(c1, 2)
 ra = n1 * n2
 #space
 print(' ')
