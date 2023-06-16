@@ -36,9 +36,9 @@ print('-' * 66)
 print('See the financial breakdown below, based on a salary of $' + str(ansal))
 print('-' * 66)
 #create formulas to turn inputs into their yearly figures (travel already is)
-mr = float(mmren * 12) #mr stands for mortgage rent
-bil = float(bills * 12) #bil is short for bills
-fo = float(food * 52) #fo is short for food
+mr = float(mmren) * 12 #mr stands for mortgage rent
+bil = float(bills) * 12 #bil is short for bills
+fo = float(food) * 52 #fo is short for food
 #for the tax section
 if ansa <= 15000:
     tax = 0.10
@@ -49,7 +49,7 @@ elif ansa > 75000 and ansa <= 200000:
 elif ansa > 200000:
     tax = 0.30
 #formula for any extra funds
-extra = ansa - (mr + bil + fo + tra + tax)
+extra = ansa - (mr + bil + fo + tra + tax) 
 #create formulas to determin what % this is out of the annual salary (exluding tax)
 #pre stands for precentage and varibal names were reused to more easily match
 premr = (mr / ansa) * 100.00
@@ -68,4 +68,4 @@ tra_f = format(tra, '15,.1f')
 tax_f = format(tax, '15,.1f')
 extra_f = format(extra, '15,.1f')
 #print results test
-print('|', format('mortgage/rent', '>15'), '|')
+print('|', format('mortgage/rent', '>15'), '| $', mr_f, '|')
