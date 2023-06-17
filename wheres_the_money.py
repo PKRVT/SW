@@ -31,10 +31,6 @@ ansa = float(ansal)
 tra = float(trav)
 #space
 print(' ')
-#line breeak for results
-print('-' * 66)
-print('See the financial breakdown below, based on a salary of $' + str(ansal))
-print('-' * 66)
 #create formulas to turn inputs into their yearly figures (travel already is)
 mr = float(mmren) * 12 #mr stands for mortgage rent
 bil = float(bills) * 12 #bil is short for bills
@@ -59,13 +55,21 @@ pretrav = (tra / ansa) * 100.00
 pretax = (tax / ansa) * 100.00
 preex = (extra / ansa) * 100.00
 #Now to format the results 
-#naming convention for these variabls is to reuse the name with _f
-#_f is short for formating
-mr_f = format(mr, '15,.1f')
-bil_f = format(bil, '15,.1f')
-fo_f = format(fo, '15,.1f')
-tra_f = format(tra, '15,.1f')
-tax_f = format(tax, '15,.1f')
-extra_f = format(extra, '15,.1f')
+x = max(premr,prebil,prefo,pretrav,pretax,preex)
+#line breeak for results
+print('-'*(46+int(x)))
+print('See the financial breakdown below, based on a salary of $' + str(ansal))
+print('-'*(46+int(x)))
 #print results test
-print('|', format('mortgage/rent', '>15'), '| $', mr_f, '|')
+print('|', format('mortgage/rent', '>15'), '| $', format(mr, '15,.2f'), '|', format(premr, '3,.1f') + 
+      '% |', '#'*int(premr))
+print('|', format('bills', '>15'), '| $', format(bil, '15,.2f'), '|', format(prebil, '3,.1f') 
+      + '% |', '#'*int(prebil))
+print('|', format('food', '>15'), '| $', format(fo, '15,.2f'), '|', format(prefo, '3,.1f') 
+      + '% |', '#'*int(prefo))
+print('|', format('travel', '>15'), '| $', format(tra, '15,.2f'), '|', format(pretrav, '3,.1f') 
+      + '% |', '#'*int(pretrav))
+print('|', format('tax', '>15'), '| $', format(tax, '15,.2f'), '|', format(pretax, '3,.1f') 
+      + '% |', '#'*int(pretax))
+print('|', format('extra', '>15'), '| $', format(extra, '15,.2f'), '|', format(preex, '3,.1f')
+      + '% |', '#'*int(preex))
